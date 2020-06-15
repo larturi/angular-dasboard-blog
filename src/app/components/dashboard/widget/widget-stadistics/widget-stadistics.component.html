@@ -1,0 +1,39 @@
+<app-widget>
+
+  <span title-widget>{{ 'label.widget.title.stadistics' | translate }}</span>
+
+  <div class="row" content-widget>
+    <div class="col-12">
+
+      <div class="row">
+
+        <div class="col-xl-6 col-lg-12">
+          <i class="fa fa-users"></i>
+          <span class="ml-3 mr-3">{{ 'label.users' | translate }}</span>
+          <span>{{ numUsers }}</span>
+        </div>
+
+        <div class="col-xl-6 col-lg-12">
+          <i class="fa fa-pencil-square-o"></i>
+          <span class="ml-3 mr-3">{{ 'label.posts' | translate }}</span>
+          <span>{{ numPosts }}</span>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-xl-6 col-lg-12">
+          <i class="fa fa-comments-o"></i>
+          <span class="ml-3 mr-3">{{ 'label.comments' | translate }}</span>
+          <span>{{ numComments }}</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <span footer-widget>{{ 'label.info.widgets.stadistics' | translate }}</span>
+
+</app-widget>
