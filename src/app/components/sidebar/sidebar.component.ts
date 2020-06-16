@@ -12,8 +12,6 @@ export class SidebarComponent implements OnInit {
     public configService: ConfigService
   ) { }
 
-  ngOnInit(): void {
-    console.log(this.configService.logo);
-  }
+  ngOnInit(): void {}
 
 }

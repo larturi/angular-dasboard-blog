@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { ChartModule } from 'primeng/chart';
+import { FormsModule } from '@angular/forms';
 
 // Components
 import { AppComponent } from './app.component';
@@ -20,6 +24,9 @@ import { CategoriesComponent } from './components/dashboard/categories/categorie
 import { ResumeComponent } from './components/dashboard/resume/resume.component';
 import { WidgetComponent } from './components/dashboard/widget/widget.component';
 import { WidgetStadisticsComponent } from './components/dashboard/widget/widget-stadistics/widget-stadistics.component';
+import { WidgetLastCommentsComponent } from './components/dashboard/widget/widget-last-comments/widget-last-comments.component';
+import { WidgetLastVisitsComponent } from './components/dashboard/widget/widget-last-visits/widget-last-visits.component';
+import { AddCategoryComponent } from './components/dashboard/categories/add-category/add-category.component';
 
 // Factorys
 export function translateFactory(provider: TranslateService) {
@@ -29,6 +36,17 @@ export function translateFactory(provider: TranslateService) {
 export function configFactory(provider: ConfigService) {
   return () => provider.getData();
 }
+
+// Firebase
+const firebaseConfig = {
+  apiKey: 'AIzaSyARWIPdDM4EyZ85uvfSraX6fvcfIrae0dQ',
+  authDomain: 'ddr-blog-2583f.firebaseapp.com',
+  databaseURL: 'https://ddr-blog-2583f.firebaseio.com',
+  projectId: 'ddr-blog-2583f',
+  storageBucket: 'ddr-blog-2583f.appspot.com',
+  messagingSenderId: '817380412680',
+  appId: '1:817380412680:web:d5ff5dc31ae06f7754b0bd'
+};
 
 @NgModule({
   declarations: [
@@ -40,12 +58,19 @@ export function configFactory(provider: ConfigService) {
     CategoriesComponent,
     ResumeComponent,
     WidgetComponent,
-    WidgetStadisticsComponent
+    WidgetStadisticsComponent,
+    WidgetLastCommentsComponent,
+    WidgetLastVisitsComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    ChartModule,
+    FormsModule
   ],
   providers: [
     TranslateService,

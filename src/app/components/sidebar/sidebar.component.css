@@ -29,11 +29,19 @@
   width: 80px;
 }
 
+#sidebar {
+  height: 1000px;
+}
+
 @media (max-width: 576px) {
   #sidebar .collapse {
       position: absolute;
       width: 100%;
       z-index: 10;
       background: #23282d;
+  }
+
+  #sidebar {
+    height: 120px;
   }
 }

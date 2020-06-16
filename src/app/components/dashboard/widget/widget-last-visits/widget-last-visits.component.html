@@ -1,0 +1,11 @@
+<app-widget>
+
+  <span title-widget>{{ 'label.last.visits' | translate }}</span>
+
+  <div content-widget>
+    <p-chart type="line" [data]="data" [responsive]="true" [options]="options"></p-chart>
+  </div>
+
+  <span footer-widget>{{ 'label.info.widget.visits' | translate }}</span>
+
+</app-widget>
