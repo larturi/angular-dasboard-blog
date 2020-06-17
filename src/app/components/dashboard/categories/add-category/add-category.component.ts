@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ICategory } from '../../../../interfaces/icategory';
+import { CategoryService } from '../../../../services/category.service';
+import { Category } from 'src/app/models/category';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-category',
@@ -12,7 +16,11 @@ export class AddCategoryComponent implements OnInit {
 
   @ViewChild('modal_add_category', {static: false}) modal_add_category;
 
-  constructor() {
+  constructor(
+    private categoryService: CategoryService,
+    private modalService: NgbModal,
+    private router: Router
+  ) {
     this.category = {
       id: '',
       name: '',
@@ -24,7 +32,10 @@ export class AddCategoryComponent implements OnInit {
   }
 
   addCategory() {
-
+    const category = new Category(this.category);
+    this.categoryService.addCategory(category);
+    this.modalService.open(this.modal_add_category);
+    this.router.navigate(['/categories']);
   }
 
 }

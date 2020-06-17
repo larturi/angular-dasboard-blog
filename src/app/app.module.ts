@@ -7,6 +7,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ChartModule } from 'primeng/chart';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TableModule } from 'primeng/table';
+import { CheckboxModule } from 'primeng/checkbox';
 
 // Components
 import { AppComponent } from './app.component';
@@ -27,6 +30,7 @@ import { WidgetStadisticsComponent } from './components/dashboard/widget/widget-
 import { WidgetLastCommentsComponent } from './components/dashboard/widget/widget-last-comments/widget-last-comments.component';
 import { WidgetLastVisitsComponent } from './components/dashboard/widget/widget-last-visits/widget-last-visits.component';
 import { AddCategoryComponent } from './components/dashboard/categories/add-category/add-category.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 // Factorys
 export function translateFactory(provider: TranslateService) {
@@ -61,7 +65,8 @@ const firebaseConfig = {
     WidgetStadisticsComponent,
     WidgetLastCommentsComponent,
     WidgetLastVisitsComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -70,7 +75,10 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     ChartModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
+    TableModule,
+    CheckboxModule
   ],
   providers: [
     TranslateService,
