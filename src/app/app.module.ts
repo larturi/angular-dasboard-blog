@@ -10,16 +10,11 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableModule } from 'primeng/table';
 import { CheckboxModule } from 'primeng/checkbox';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 // Components
 import { AppComponent } from './app.component';
-
-// Pipes
-import { TranslatePipe } from './pipes/translate.pipe';
-
-// Services
-import { TranslateService } from './services/translate.service';
-import { ConfigService } from './services/config.service';
+import { AddPostComponent } from './components/dashboard/posts/add-post/add-post.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PostsComponent } from './components/dashboard/posts/posts.component';
@@ -30,7 +25,17 @@ import { WidgetStadisticsComponent } from './components/dashboard/widget/widget-
 import { WidgetLastCommentsComponent } from './components/dashboard/widget/widget-last-comments/widget-last-comments.component';
 import { WidgetLastVisitsComponent } from './components/dashboard/widget/widget-last-visits/widget-last-visits.component';
 import { AddCategoryComponent } from './components/dashboard/categories/add-category/add-category.component';
+
+// Pipes
+import { TranslatePipe } from './pipes/translate.pipe';
+
+// Services
+import { TranslateService } from './services/translate.service';
+import { ConfigService } from './services/config.service';
+
+// Directives
 import { HighlightDirective } from './directives/highlight.directive';
+import { WidgetSelectCategoryComponent } from './components/dashboard/widget/widget-select-category/widget-select-category.component';
 
 // Factorys
 export function translateFactory(provider: TranslateService) {
@@ -66,7 +71,9 @@ const firebaseConfig = {
     WidgetLastCommentsComponent,
     WidgetLastVisitsComponent,
     AddCategoryComponent,
-    HighlightDirective
+    HighlightDirective,
+    AddPostComponent,
+    WidgetSelectCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +85,8 @@ const firebaseConfig = {
     FormsModule,
     NgbModule,
     TableModule,
-    CheckboxModule
+    CheckboxModule,
+    AngularEditorModule
   ],
   providers: [
     TranslateService,

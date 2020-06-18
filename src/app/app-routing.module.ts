@@ -4,6 +4,7 @@ import { ResumeComponent } from './components/dashboard/resume/resume.component'
 import { PostsComponent } from './components/dashboard/posts/posts.component';
 import { CategoriesComponent } from './components/dashboard/categories/categories.component';
 import { AddCategoryComponent } from './components/dashboard/categories/add-category/add-category.component';
+import { AddPostComponent } from './components/dashboard/posts/add-post/add-post.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'posts', component: PostsComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'add-category', component: AddCategoryComponent },
+  { path: 'add-post', component: AddPostComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'resume' }
 ];
 
