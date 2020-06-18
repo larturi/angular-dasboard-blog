@@ -27,7 +27,7 @@ export class Post implements IPost {
     return _.get(this, 'data.date');
   }
 
-  set date(value: Date) {
+  set date(value: string) {
     _.set(this, 'data.date', value);
   }
 
