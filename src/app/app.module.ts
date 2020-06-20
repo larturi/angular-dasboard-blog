@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ChartModule } from 'primeng/chart';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -38,6 +39,8 @@ import { ConfigService } from './services/config.service';
 import { HighlightDirective } from './directives/highlight.directive';
 import { WidgetSelectCategoryComponent } from './components/dashboard/widget/widget-select-category/widget-select-category.component';
 import { WidgetUpdloadThumbnailComponent } from './components/dashboard/widget/widget-updload-thumbnail/widget-updload-thumbnail.component';
+import { JoinPipe } from './pipes/join.pipe';
+import { LoginComponent } from './components/login/login.component';
 
 // Factorys
 export function translateFactory(provider: TranslateService) {
@@ -76,7 +79,9 @@ const firebaseConfig = {
     HighlightDirective,
     AddPostComponent,
     WidgetSelectCategoryComponent,
-    WidgetUpdloadThumbnailComponent
+    WidgetUpdloadThumbnailComponent,
+    JoinPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +90,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
+    AngularFireAuthModule,
     ChartModule,
     FormsModule,
     NgbModule,

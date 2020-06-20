@@ -18,7 +18,7 @@ export class ConfigService {
         this._data = data;
         resolve(true);
       }, error => {
-        console.log(error);
+        console.error(error);
         reject(true);
       });
     });

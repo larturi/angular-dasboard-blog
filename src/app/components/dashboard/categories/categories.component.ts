@@ -33,7 +33,7 @@ export class CategoriesComponent implements OnInit {
       this.categories = listCategories;
       this.showCategories = true;
     }, error => {
-      console.log(error);
+      console.error(error);
       this.showCategories = true;
     });
   }

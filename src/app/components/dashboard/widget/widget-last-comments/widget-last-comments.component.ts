@@ -18,7 +18,6 @@ export class WidgetLastCommentsComponent implements OnInit {
   ngOnInit(): void {
     this.commentService.getLastComments().subscribe(lastComments => {
        this.listComments = lastComments;
-       console.log(lastComments);
     });
   }
 

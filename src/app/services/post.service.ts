@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { Post } from '../models/post';
 import { Observable } from 'rxjs';
 
-import * as moment from 'moment';
 import { IPost } from '../interfaces/ipost';
+import { Post } from '../models/post';
+
+import * as moment from 'moment';
+import * as _ from 'lodash';
+
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +34,12 @@ export class PostService {
       const postRefId = this.afdb.database.ref('posts/' + post.id);
       postRefId.set(post.getData());
 
+  }
+
+  deletePosts(ids: string[]) {
+    _.forEach(ids, id => {
+      this.afdb.object('posts/' + id).remove();
+    });
   }
 
 }

@@ -17,7 +17,7 @@ export class TranslateService {
           this._data = data;
           resolve(true);
         }, error => {
-          console.log('Error al recuperar las traducciones: ' + error);
+          console.error('Error al recuperar las traducciones: ' + error);
           reject(true);
         });
     });
